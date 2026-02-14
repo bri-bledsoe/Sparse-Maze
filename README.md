@@ -10,12 +10,6 @@ This assignment introduces sparse data structures through an interactive maze im
 
 Imagine designing a video game with massive worlds (like Minecraft). Most of these worlds are largely empty space or filled with the same default terrain. Storing every single cell would be enormously wasteful! Instead, we can be clever: **assume all cells are open by default, and only store the locations of walls.**
 
-In practice, sparse data structures are fundamental in:
-- Computer graphics
-- Game development
-- Scientific computing
-- Any large dataset with mostly uniform values and scattered exceptions
-
 ## Implementation Requirements
 
 ### SparseMaze Class
@@ -63,7 +57,7 @@ void clear()
 - Clears all stored nodes
 - Resets `storedCellCount` to 0
 
-#### Accessors
+#### Getters
 
 ```java
 int getWidth()
@@ -148,57 +142,6 @@ T T T T T
 
 Internal state: head -> [index=14, value=false] -> null
 ```
-
-## Grading Rubric (18 points total)
-
-| Spec # | Requirement | Points |
-|--------|-------------|--------|
-| 1 | Constructor initialization, sentinel node, DimensionException | 2 |
-| 2 | getWidth() and getHeight() correctness | 1 |
-| 3 | getDefaultValue() correctness and consistency | 1 |
-| 4 | isOpen() correct and efficient search | 2 |
-| 5 | setCell() add, update, remove, and sparsity maintenance | 3 |
-| 6 | setCell() maintains storedCellCount correctly | 1 |
-| 7 | setCell() throws CellIndexOutOfBoundsException | 0.5 |
-| 8 | clear() resets state and clears nodes | 1.5 |
-| 9 | Iterator traverses all cells in row-major order | 2 |
-| 10 | Iterator is efficient (few operations per next()) | 2 |
-| 11 | Singly linked list with sentinel, no Java Collections | 1 |
-| 12 | Good code style, encapsulation, nested private Node | 1 |
-
-## Getting Started
-
-### Prerequisites
-- Java 8 or higher
-- IntelliJ IDEA (recommended)
-
-### Setup
-1. Download and unzip the starter code (`hw2-starter.zip`)
-2. Open the `hw2-starter` folder as an IntelliJ project
-3. Review the `Maze` interface and dense implementations for reference
-
-### Testing
-- Use provided test cases to validate your implementation
-- Run checkstyle to ensure code compliance
-- Test sparsity: verify nodes are only stored for non-default values
-
-## Important Notes
-
-⚠️ **Refactoring for Efficiency**: After implementing a working solution, you may need to refactor to make the iterator efficient. Always commit your working version before attempting optimizations.
-
-⚠️ **Maintain Sparsity**: It is **required** to remove nodes when values are set back to default!
-
-⚠️ **No Modifications**: Do not modify the `Maze` interface or provided example implementations.
-
-## Submission Checklist
-
-- [ ] All methods implemented and tested
-- [ ] Code passes checkstyle compliance
-- [ ] Iterator is efficient (minimal operations per cell)
-- [ ] Sparsity is maintained (no default values stored)
-- [ ] Create zip file containing `src` folder
-- [ ] Submit to Gradescope before deadline (Wed, Feb 11 at 5:00 PM ET)
-
 ## Key Concepts Covered
 
 - **Linked Lists**: Singly linked list structure with sentinel node
@@ -207,13 +150,3 @@ Internal state: head -> [index=14, value=false] -> null
 - **Encapsulation**: Private nested Node class
 - **Exception Handling**: DimensionException and CellIndexOutOfBoundsException
 - **Asymptotic Analysis**: Understanding iterator efficiency
-
-## References
-
-- JHU Data Structures & Algorithms Course
-- Starter code includes Dense1DMaze and Dense2DMaze as examples
-- Maze interface specification in provided starter code
-
----
-
-**Course**: JHU DSA | **Assignment**: Homework 2 | **Due**: Wed, Feb 11, 5:00 PM ET
