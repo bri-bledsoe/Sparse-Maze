@@ -62,7 +62,7 @@ void clear()
 ```java
 int getWidth()
 int getHeight()
-b boolean getDefaultValue()
+boolean getDefaultValue()
 ```
 
 ### Iterator Implementation
